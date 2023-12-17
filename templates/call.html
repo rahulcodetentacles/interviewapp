@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InterviewApp</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Interview Call</h1>
+
+    <form action="/call" method="POST">
+      <label for="number">Phone Number:</label>
+      <input type="text" id="number" name="number" required>
+      <label for="position">Position:</label>
+      <input type="text" id="position" name="position" required>
+      <label for="experience">Experience:</label>
+      <input type="text" id="experience" name="experience" required>
+      <button class="btn" type="submit">Call</button>
+    </form>
+
+    {% if message %}
+      <p class="message {% if message == 'Call initiated successfully!' %}success{% else %}error{% endif %}">{{ message }}</p>
+    {% endif %}
+  </div>
+</body>
+
+</html>
